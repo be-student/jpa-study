@@ -22,5 +22,6 @@ public class Member {
 //    @AttributeOverride(name = "value", column = @jakarta.persistence.Column(name = "name"))
     private NotName notName;
 
-//    private String name;
+    @Embedded
+    private StringCollection stringCollection;
 }
