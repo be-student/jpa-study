@@ -38,4 +38,30 @@ public class TransactionService {
         dropTransactionService.dropTransaction();
         throw new RuntimeException();
     }
+
+    @Transactional
+    public void transactionSaveDropSaveAndSaveMember() {
+        memberRepository.save(new Member("beforeDropTransaction"));
+        dropTransactionService.dropTransactionAndSaveMember();
+        memberRepository.save(new Member("afterDropTransaction"));
+    }
+
+    @Transactional
+    public void transactionSaveDropSaveAndThrow() {
+        memberRepository.save(new Member("beforeDropTransaction"));
+        dropTransactionService.dropTransactionAndSaveMember();
+        throw new RuntimeException();
+    }
+
+    public void saveDropSaveAndSaveMember() {
+        memberRepository.save(new Member("beforeDropTransaction"));
+        dropTransactionService.dropTransactionAndSaveMember();
+        memberRepository.save(new Member("afterDropTransaction"));
+    }
+
+    public void saveDropSaveAndThrow() {
+        memberRepository.save(new Member("beforeDropTransaction"));
+        dropTransactionService.dropTransactionAndSaveMember();
+        throw new RuntimeException();
+    }
 }
