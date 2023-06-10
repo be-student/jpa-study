@@ -2,4 +2,5 @@ rootProject.name = 'demo'
 include 'transaction'
 include 'embedded'
 include 'connectionlimit'
+include 'optimistic-lock'
 
