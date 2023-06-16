@@ -3,4 +3,5 @@ include 'transaction'
 include 'embedded'
 include 'connectionlimit'
 include 'optimistic-lock'
+include 'low-jpa'
 
